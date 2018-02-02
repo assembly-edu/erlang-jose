@@ -502,9 +502,9 @@ check_rsa_crypt(true) ->
 check_rsa_crypt(Fallback) ->
 	Algorithms = [
 		%% Algorithm,    LegacyOptions,                       FutureOptions
-		{rsa1_5,       [{rsa_pad, rsa_pkcs1_padding}],      [{rsa_padding, rsa_pkcs1_padding}]},
-		{rsa_oaep,     [{rsa_pad, rsa_pkcs1_oaep_padding}], [{rsa_padding, rsa_pkcs1_oaep_padding}]},
-		{rsa_oaep_256, notsup,                              [{rsa_padding, rsa_pkcs1_oaep_padding}, {rsa_oaep_md, sha256}]}
+		{rsa1_5,       [{rsa_pad, rsa_pkcs1_padding}],      [{rsa_pad, rsa_pkcs1_padding}]},
+		{rsa_oaep,     [{rsa_pad, rsa_pkcs1_oaep_padding}], [{rsa_pad, rsa_pkcs1_oaep_padding}]},
+		{rsa_oaep_256, notsup,                              [{rsa_pad, rsa_pkcs1_oaep_padding}, {rsa_oaep_md, sha256}]}
 	],
 	_ = code:ensure_loaded(public_key),
 	_ = application:ensure_all_started(public_key),
